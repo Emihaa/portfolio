@@ -1,2 +1,2 @@
-# portfolio
-This is my Tech Artist portfolio
+# Portfolio
+WIP. This will be my Technical Artist portfolio
