@@ -4,7 +4,7 @@ theme: jekyll-theme-minimal
 
 header:
   pages:
-    - title: Home
-      url: /
-    - title: Teaching
-      url: /teaching/
+    - name: Home
+      slug: /
+    - name: Teaching
+      slug: /teaching/
