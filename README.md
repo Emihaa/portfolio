@@ -8,7 +8,7 @@ Experienced 3D artist with several years of experience from the mobile game indu
 - [Linkedin](https://www.linkedin.com/in/emilia-haanp%C3%A4%C3%A4-25a88070)
 - [ArtStation](https://www.artstation.com/emihaa)
 - [Github](https://github.com/Emihaa)
-- [CV](https://www.canva.com/design/DAGkP6-mzDo/y7aw6FWe4J6OfEcBOld1YQ/edit?utm_content=DAGkP6-mzDo&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+- <a href="CV-2025.pdf">CV</a>
 
 ## Course lecturer at Xamk, University of Applied Sciences
 
