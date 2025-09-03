@@ -1,5 +1,7 @@
 # Technical Artist Portfolio
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 ## About Me
 
 Experienced 3D artist with more than 7 years of experience from the mobile game industry, including senior and lead roles. Currently expanding my technical skillset through studies at Hive Helsinki, an intensive software engineering program, to develop as a technical artist who connects art and code.
@@ -10,6 +12,10 @@ Experienced 3D artist with more than 7 years of experience from the mobile game 
 - [Github](https://github.com/Emihaa)
 - <a href="CV-2025.pdf">CV</a>
 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 ## Course lecturer at Xamk, University of Applied Sciences
 
 I have two courses that I have been teaching since the beginning of 2024. *3D Environment Design & 3D Character Design.*
@@ -17,10 +23,13 @@ I have two courses that I have been teaching since the beginning of 2024. *3D En
 In both courses, I combine artistic principles with technical workflows, giving students skills and creativity to bring their ideas to life, but also the technical understanding needed for the pipeline of game production. My goal as a teacher is also to share practical knowledge and industry insight for students that wish to enter the game industry and find their footing.
 
 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 # 3D Environment Design
 
-![image](environment-design/welcome-environment.png)
-*The course plan*
+![image](environment-design/3DEnvironmentDesign.png)
+*Image example of my course planning from Spring 2025*
 
 I designed and developed this course from the ground up, including its structure, assignments, and study materials. In my course, students learn the complete 3D asset creation pipeline, starting with Blender and progressing all the way into a game engine. I provide tailored study materials, including articles I have written and resources from other industry professionals. The course is structured around both individual and team projects: smaller assignments and case studies build technical foundations, while a larger 3D environment project gives students the chance to apply their skills in a teamwork setting. I am solely responsible for managing deadlines, student communication, and feedback, delivering the course through a mix of online lectures, hands-on workshops, and regular critique sessions.
 
@@ -31,10 +40,14 @@ I designed and developed this course from the ground up, including its structure
 ![image](environment-design/modular-design.png)
 *Pipeline explanation about modular design methods to help students familiarize themselves with the subject and to use it in their project pipeline*
 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 # 3D Character Design
 
-![image](character-design/3D-Character-design.png)
-*The course plan*
+![image](character-design/3DCharacterDesign.png)
+*Image example of my course plan from Spring 2025 (much more straight forward than 3D Environment Design -course)*
 
 I designed this course from the ground up, creating its structure, assignments, and study materials. The course guides students through the full pipeline of producing stylized 3D characters for games, from concept art to a rig-ready 3D model. Students practice sculpting, retopology, UV mapping, texturing, and preparing the character for animation. The process emphasizes iteration, critique sessions, and structured feedback, helping students refine their characters step by step into game-ready standard. I am solely responsible for managing deadlines, assignments, and student communication, while delivering the course through a mix of lectures, hands-on workshops, and feedback sessions.
 
