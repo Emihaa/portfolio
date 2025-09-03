@@ -2,7 +2,7 @@
 
 ## About Me
 
-Experienced 3D artist with several years of experience from the mobile game industry, including senior and lead roles. Currently expanding my technical skillset through studies at Hive Helsinki, an intensive software engineering program, to develop as a technical artist who connects art and code.
+Experienced 3D artist with more than 7 years of experience from the mobile game industry, including senior and lead roles. Currently expanding my technical skillset through studies at Hive Helsinki, an intensive software engineering program, to develop as a technical artist who connects art and code.
 
 ## Contact Details
 - [Linkedin](https://www.linkedin.com/in/emilia-haanp%C3%A4%C3%A4-25a88070)
