@@ -2,8 +2,9 @@ title: Emilia Haanpää
 logo: profile-image.jpeg
 theme: jekyll-theme-minimal
 
-navigation:
-  - title: Home
-    url: /
-  - title: Teaching
-    url: /teaching/
+header:
+  pages:
+    - title: Home
+      url: /
+    - title: Teaching
+      url: /teaching/
