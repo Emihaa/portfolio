@@ -21,6 +21,24 @@ Experienced 3D artist with more than 7 years of experience from the mobile game 
 My Technical Artist blog starts here:
 
 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# [Space Colonization Algorithm, Unity/C# October 2025](https://github.com/Emihaa/Space_colonization_for_Unity)
+
+## My Second Mentor Assignment: Creating a Space Colonization Algorithm for Unity
+
+Text here
+
+## The Assignment
+
+[LINK](https://medium.com/@jason.webb/space-colonization-algorithm-in-javascript-6f683b743dc5)
+
+Goal:
+- Unity learning
+
+
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # [Automated Blender Script, Python September 2025](https://github.com/Emihaa/BlenderSpheres)
