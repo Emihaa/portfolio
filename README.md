@@ -79,7 +79,7 @@ Instead, I learned that I should first run the logic and math in the background,
 This realization made my script simpler, lighter, and faster. And also smaller. I rewrote it so that each sphere became a Sphere class, storing all its necessary parameters like position and radius of the sphere. The growth now happens entirely in data, not in visible geometry, and only after the process is complete are the final spheres instantiated in Blender visible to the user.
 
 The second major improvement was code reusability. My first solution used a custom white-noise system to scatter the spheres randomly without overlap. It worked, but it was just a bit unnecessary. In my rewritten version, I added a checkCollision() function to handle overlap detection and reused that same function for both position generation and the growth logic.
-This meant less code, more clarity, and better approachability.
+This meant less code, more clarity, and better readability.
 
 ## Reflection
 
