@@ -32,6 +32,8 @@ He gave me a Blender automation script assignment, which would give him an idea 
 
 ## The Assignment
 
+![image](Blender-Spheres/assignment.png)
+
 Goal:
 - Create a Blender script that optimizes circle or sphere sizes to their maximum extent.
 - Do this within the given rectangular space (optional).
@@ -44,41 +46,46 @@ Constraints:
 Example Image Explanation:
 Colored circles are circles in their initial state. Dashed circles around them are the state when they are i their most extended state within the given rectangular space, without overlapping.
 
-![image](https://github.com/Emihaa/BlenderSpheres/blob/88cca35b32a9a015cd44fe7e8235c4f044b40bc0/assignment.png)
 
 ## My Approach
 
 I had two weeks to complete the assignment. This was my first time scripting in Blender and also my first project in Python, so I had to learn both the Blender API and the Python syntax.
-I first figured out how to instantiate the spheres in Blender based on the given restrains (inside a box basically).
+I first figured out how to instantiate the spheres in Blender based on the given constraints (inside a box basically).
+
 After that, I built a while loop that iteratively grew each sphere. In each iteration:
 The script calculated the distance between every pair of spheres.
 It subtracted the radii of both spheres from that distance and halved the result.
 That value determined how much each sphere could grow without overlapping.
 If the remaining space between any two spheres was smaller than a given epsilon threshold, the growth stopped.
 Then do the same to the next sphere.
+
 When none of the spheres could grow anymore, the loop ended, leaving a set of perfectly optimized, non-overlapping spheres filling the space.
 The last thing I did was this white-noise scatter logic to generate random initial positions for the spheres, making sure none of them spawned inside each other.
+
 More of that here if you are interested: [Link here.](https://extremelearning.com.au/unreasonable-effectiveness-of-quasirandom-sequences/)
+  
+      
+ ![images](Blender-Spheres/Blender-screenshot.png)
+
 
 ## The Feedback
 
 The feedback I received was eye-opening.
-Even though my script was working — and I was honestly proud of it, considering it was my first Python project and I completed it within two busy weeks while working and studying — my mentor’s comments pushed me to rethink the entire approach.
-I ended up rewriting the growth logic three times before I was satisfied with the final result.
-The biggest lesson I learned was to separate the code from the art. Coming from a 3D art background, I naturally tend to approach problems visually — and that’s exactly what I did here. My first version spawned all the spheres immediately, because that’s what made sense visually. But in programming, especially for optimization tasks, this is unnecessary and inefficient.
+
+Even though my script was working, and I was honestly kinda proud of it, considering it was my first Python script and I completed it within two weeks while working and studying, my mentor’s feedback made me rewrite the core of my script 3 times.
+The biggest lesson I learned was to separate the code from the art. Coming from a 3D art background, I naturally tend to approach problems visually. My first reaction was to spawn all the spheres immediately, because that’s what made sense visually. But in programming, especially for optimization tasks, this is unnecessary and not optimized.
+
 Instead, I learned that I should first run the logic and math in the background, and only after everything is calculated, instantiate the visuals. No one sees the spheres growing in real time anyway, so why waste computation on scaling them physically?
-This realization made my script simpler, lighter, and faster. I rewrote it so that each sphere became an instance of a Sphere class, storing all its parameters like position and radius. The growth now happens entirely in data — not in visible geometry — and only after the process is complete are the final spheres instantiated in Blender.
-The second major improvement was code reusability. My first solution used a custom white-noise system to scatter the spheres randomly without overlap. It worked, but it was over-engineered. In my rewritten version, I added a checkCollision() function to handle overlap detection — and reused that same function for both position generation and the growth logic.
-This meant less code, more clarity, and better maintainability.
+This realization made my script simpler, lighter, and faster. And also smaller. I rewrote it so that each sphere became a Sphere class, storing all its necessary parameters like position and radius of the sphere. The growth now happens entirely in data, not in visible geometry, and only after the process is complete are the final spheres instantiated in Blender visible to the user.
+The second major improvement was code reusability. My first solution used a custom white-noise system to scatter the spheres randomly without overlap. It worked, but it was unnecessary. In my rewritten version, I added a checkCollision() function to handle overlap detection and reused that same function for both position generation and the growth logic.
+This meant less code, more clarity, and better approachability.
 
 ## Reflection
 
 Overall, I had a lot of fun working on this assignment.
-Python turned out to be far less intimidating than I expected — especially after getting used to C and C++ at Hive. It actually felt quite approachable and expressive.
+Python turned out to be far less intimidating than I expected, especially after getting used to C and C++ at Hive. It actually felt quite approachable.
 
 I do miss my curly brackets, though.
-
-This project taught me not only how to write a Blender script, but how to think like a technical artist who codes — separating visuals from logic, optimizing both workflow and computation, and always looking for elegant simplicity in solutions.
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
