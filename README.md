@@ -22,16 +22,75 @@ Experienced 3D artist with more than 7 years of experience from the mobile game 
 
 # [Space Colonization Algorithm, Unity/C# October 2025](https://github.com/Emihaa/Space_colonization_for_Unity)
 
-## My Second Mentor Assignment: Creating a Space Colonization Algorithm for Unity
+## Mentor Project #2: Creating a Space Colonization Algorithm for Unity
 
-Text here
+My second mentor project focused on implementing the Space Colonization Algorithm in Unity using C#. The goal was to simulate organic branching growth — a system I could later expand into an ivy-like procedural plant generator.
+Although I had used Unity years ago for basic projects, this was my first time applying my current programming knowledge to its scripting API. The difference was night and day: this time, I wasn’t just following tutorials — I was designing and structuring a real system.
 
-## The Assignment
+## Goal
 
-[LINK](https://medium.com/@jason.webb/space-colonization-algorithm-in-javascript-6f683b743dc5)
+To create a flexible branching system based on the Space Colonization Algorithm, with the long-term vision of building an artist-friendly tool for procedural ivy growth in Unity.
+Planned features included:
 
-Goal:
-- Unity learning
+- Generating ivy growth around any target mesh
+- Controlling offsets, density, and color variation
+- Masking growth areas
+- Generating leaves and adjusting branch thickness
+
+## Research
+
+I started by studying the algorithm conceptually. The article “Modeling Organic Branching Structures with the Space Colonization Algorithm and JavaScript” by Jason Webb ([link]) was the key breakthrough that made the algorithm click for me. It explained the principles clearly enough that I could confidently translate them into C# and Unity’s environment.
+
+## Implementation
+
+- 1. Generating attraction points
+
+I began by generating random attraction points over the target mesh surface.
+Initially, I looped through every triangle and spawned a random point inside each — but that resulted in uneven distribution because smaller triangles accumulated too many points.
+To fix this, I implemented a weighted random algorithm ([link]) that calculated each triangle’s area and distributed attraction points proportionally. This produced a much more natural, even spread.
+I also added an optional feature that prevented attraction points from spawning on the dark side of the mesh (based on the sun direction vector). This was a simple dot-product check — if the result was negative, the point was skipped.
+
+- 2. Building the branching system
+
+I implemented a Node class using a linked list structure to represent branches.
+Each node:
+- Stores its position, parent, and connected attractors
+- Calculates direction toward active attractors within a given radius
+- Spawns new nodes in those directions
+
+To optimize performance, I looped through attraction points (rather than every node) and checked which nodes were within their attraction radius. Since each attractor can only affect one node, this was far more efficient than the reverse approach.
+When nodes grew close enough to an attractor (within a “kill distance”), that attractor was removed — simulating the branch reaching it. This loop continued until no new nodes were generated or the user-defined iteration limit was reached.
+
+- 3. Visualization and controls
+
+To visualize growth, I used Unity Gizmos and Debug.DrawLine() to draw branches dynamically in the Scene view.
+I also built a custom inspector to control settings in real time — adjusting attraction radius, growth iterations, and regeneration of attractor points on the fly.
+This made debugging and iteration far smoother, and gave me a clear understanding of how each parameter affected the results.
+
+- 4. Building geometry
+
+Once the algorithm worked, I wanted something tangible to show — not just Gizmos.
+At first, I instantiated cylinder prefabs for each node connection. It technically worked, but scaling and rotation issues made it visually clumsy. I realized fixing that would only lead to more complexity.
+After researching alternatives, I found a blog post ([link]) describing how to procedurally generate a single mesh for branching structures. With some help from ChatGPT, I adapted that logic to my system, allowing me to generate a unified mesh tree instead of stacking prefabs.
+For fun, I added a branch thickness gradient — branches grow thicker toward the base depending on their depth. It gave the structure more life and realism.
+
+## Results and Reflection
+
+The project met all my goals for this phase. The algorithm works, the branches grow correctly, and I understand the system deeply — from geometry sampling to growth iteration logic.
+From a coder’s perspective, I’m proud of the structure, clarity, and optimization.
+From an artist’s perspective, however — it still hurts a bit to look at. The system works beautifully, but it’s not yet visually beautiful.
+That’s fine. This project was about foundations. And those foundations are solid.
+
+## Next Steps
+
+I plan to revisit this project to:
+
+- Detect sharp mesh edges and generate attraction points around them
+- Prevent attractor placement inside overlapping meshes
+- Improve branch thickness logic
+- Generate ivy leaves with color variation
+
+This project is a perfect example of what I love about technical art: bridging creative vision and algorithmic systems. It challenged me, expanded my Unity scripting knowledge, and reminded me how satisfying it feels to make something grow from code.
 
 
 
