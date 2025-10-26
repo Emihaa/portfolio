@@ -41,6 +41,8 @@ Planned features included:
 
 I started by studying the algorithm conceptually. The article “Modeling Organic Branching Structures with the Space Colonization Algorithm and JavaScript” by Jason Webb ([link]) was the key breakthrough that made the algorithm click for me. It explained the principles clearly enough that I could confidently translate them into C# and Unity’s environment.
 
+![image](space_colonization/lines.png)
+
 ## Implementation
 
 - 1. Generating attraction points
@@ -73,6 +75,8 @@ Once the algorithm worked, I wanted something tangible to show — not just Gizm
 At first, I instantiated cylinder prefabs for each node connection. It technically worked, but scaling and rotation issues made it visually clumsy. I realized fixing that would only lead to more complexity.
 After researching alternatives, I found a blog post ([link]) describing how to procedurally generate a single mesh for branching structures. With some help from ChatGPT, I adapted that logic to my system, allowing me to generate a unified mesh tree instead of stacking prefabs.
 For fun, I added a branch thickness gradient — branches grow thicker toward the base depending on their depth. It gave the structure more life and realism.
+
+![image](space_colonization/mesh.png)
 
 ## Results and Reflection
 
