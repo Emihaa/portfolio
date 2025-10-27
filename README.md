@@ -24,52 +24,56 @@ Experienced 3D artist with more than 7 years of experience from the mobile game 
 
 ## Mentor Project #2: Creating a Space Colonization Algorithm for Unity
 
-My second mentor project focused on implementing the Space Colonization Algorithm in Unity using C#. The goal was to simulate organic branching growth — a system I could later expand into an ivy-like procedural plant generator.
-Although I had used Unity years ago for basic projects, this was my first time applying my current programming knowledge to its scripting API. The difference was night and day: this time, I wasn’t just following tutorials — I was designing and structuring a real system.
+My second mentor project focused on implementing the Space Colonization Algorithm in Unity using C#. The goal was to simulate an organic branching growth system that I could later expand into an ivy-like procedural plant generator.
+Although I had used Unity years ago for virtual reality projects, this was my first time applying my current programming knowledge to Unity's own scripting API. The difference was huge: this time, I wasn’t just following tutorials, but I was designing and creating my own logic.
 
 ## Goal
 
-To create a flexible branching system based on the Space Colonization Algorithm, with the long-term vision of building an artist-friendly tool for procedural ivy growth in Unity.
+To create a branching system based on the Space Colonization Algorithm, I had/have this ambitious goal of building an artist-friendly tool for procedural ivy growth in Unity.
 Planned features included:
 
-- Generating ivy growth around any target mesh
+- Generating ivy growth around any target mesh(s)
 - Controlling offsets, density, and color variation
 - Masking growth areas
 - Generating leaves and adjusting branch thickness
 
+![image](space_colonization/pureref.png)
+(Really ambitious, I know)
+
 ## Research
 
-I started by studying the algorithm conceptually. The article “Modeling Organic Branching Structures with the Space Colonization Algorithm and JavaScript” by Jason Webb ([link]) was the key breakthrough that made the algorithm click for me. It explained the principles clearly enough that I could confidently translate them into C# and Unity’s environment.
+I started by studying the algorithm first. The article “Modeling Organic Branching Structures with the Space Colonization Algorithm and JavaScript” by Jason Webb (https://medium.com/@jason.webb/space-colonization-algorithm-in-javascript-6f683b743dc5) was the best thing that made the algorithm click for me. It explained the foundation of the algorithm clearly so that I felt that I could write it into C# and Unity’s environment.
 
 ![image](space_colonization/lines.png)
 
 ## Implementation
 
-- 1. Generating attraction points
+- Generating attraction points
 
 I began by generating random attraction points over the target mesh surface.
-Initially, I looped through every triangle and spawned a random point inside each — but that resulted in uneven distribution because smaller triangles accumulated too many points.
-To fix this, I implemented a weighted random algorithm ([link]) that calculated each triangle’s area and distributed attraction points proportionally. This produced a much more natural, even spread.
-I also added an optional feature that prevented attraction points from spawning on the dark side of the mesh (based on the sun direction vector). This was a simple dot-product check — if the result was negative, the point was skipped.
+Initially, I looped through every triangle of a mesh and generated a random point inside each, but that resulted in uneven distribution because smaller triangles accumulated unnecessarily many points, and larger triangles were noticeably emptier.
+To fix this, I implemented a weighted random algorithm [link](https://dev.to/jacktt/understanding-the-weighted-random-algorithm-581p) that calculated each triangle’s area and distributed attraction points proportionally. This produced a much more natural, even spread.
+I also added an optional feature that prevented attraction points from spawning on the dark side of the mesh (based on the sun direction). This was a simple dot-product check between the triangle vector and the sun vector, if the result was negative, the triangle was skipped, and no attraction points would spawn on it.
 
-- 2. Building the branching system
+- Building the branching system
 
 I implemented a Node class using a linked list structure to represent branches.
-Each node:
-- Stores its position, parent, and connected attractors
-- Calculates direction toward active attractors within a given radius
-- Spawns new nodes in those directions
+Each node stores:
+- Position, direction, and thickness values
+- References to next and previous nodes
+- List of attractors that are currently affecting this node
+- And many other attributes
 
-To optimize performance, I looped through attraction points (rather than every node) and checked which nodes were within their attraction radius. Since each attractor can only affect one node, this was far more efficient than the reverse approach.
+Calculates direction toward active attractors within a given radius. Spawns new nodes in those directions. To optimize performance, I looped through attraction points (rather than every node) and checked which nodes were within their attraction radius. Since each attractor can only affect one node, this was far more efficient than the reverse approach.
 When nodes grew close enough to an attractor (within a “kill distance”), that attractor was removed — simulating the branch reaching it. This loop continued until no new nodes were generated or the user-defined iteration limit was reached.
 
-- 3. Visualization and controls
+- Visualization and controls
 
 To visualize growth, I used Unity Gizmos and Debug.DrawLine() to draw branches dynamically in the Scene view.
 I also built a custom inspector to control settings in real time — adjusting attraction radius, growth iterations, and regeneration of attractor points on the fly.
 This made debugging and iteration far smoother, and gave me a clear understanding of how each parameter affected the results.
 
-- 4. Building geometry
+- Building geometry
 
 Once the algorithm worked, I wanted something tangible to show — not just Gizmos.
 At first, I instantiated cylinder prefabs for each node connection. It technically worked, but scaling and rotation issues made it visually clumsy. I realized fixing that would only lead to more complexity.
