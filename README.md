@@ -95,7 +95,7 @@ From an artist’s perspective, my heart bleeds. The script works beautifully, b
 
 ## Next Steps
 
-There is still many things I want to do, and I plan to visit this project to:
+There is still many things I want to do, and I plan to visit this project at some point to:
 
 - Detect sharp mesh edges and generate additional attraction points on the vertex points so that the branch won't go inside the mesh
 - Prevent attractor placement inside overlapping meshes
