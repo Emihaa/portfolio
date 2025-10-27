@@ -42,7 +42,7 @@ Planned features included:
 
 ## Research
 
-I started by studying the algorithm first. The article “Modeling Organic Branching Structures with the Space Colonization Algorithm and JavaScript” by Jason Webb [link](https://medium.com/@jason.webb/space-colonization-algorithm-in-javascript-6f683b743dc5) was the best thing that made the algorithm click for me. It explained the foundation of the algorithm clearly so that I felt that I could write it into C# and Unity’s environment.
+I started by studying the algorithm first. The article “Modeling Organic Branching Structures with the Space Colonization Algorithm and JavaScript” by Jason Webb [(link)](https://medium.com/@jason.webb/space-colonization-algorithm-in-javascript-6f683b743dc5) was the best thing that made the algorithm click for me. It explained the foundation of the algorithm clearly so that I felt that I could write it into C# and Unity’s environment.
 
 ![image](space_colonization/lines.png)
 
@@ -50,9 +50,9 @@ I started by studying the algorithm first. The article “Modeling Organic Branc
 
 ### Generating attraction points
 
-I began by generating random attraction points over the target mesh surface.
+I began by generating attraction points over the target mesh surface.
 Initially, I looped through every triangle of a mesh and generated a random point inside each, but that resulted in uneven distribution because smaller triangles accumulated unnecessarily many points, and larger triangles were noticeably emptier.
-To fix this, I implemented a weighted random algorithm [link](https://dev.to/jacktt/understanding-the-weighted-random-algorithm-581p) that calculated each triangle’s area and distributed attraction points proportionally. This produced a much more natural, even spread.
+To fix this, I implemented a weighted random algorithm [(link)](https://dev.to/jacktt/understanding-the-weighted-random-algorithm-581p) that calculated each triangle’s area and distributed attraction points proportionally. This produced a much more natural, even spread.
 I also added an optional feature that prevented attraction points from spawning on the dark side of the mesh (based on the sun direction). This was a simple dot-product check between the triangle vector and the sun vector, if the result was negative, the triangle was skipped, and no attraction points would spawn on it.
 
 ### Building the branching system
@@ -64,41 +64,48 @@ Each node stores:
 - List of attractors that are currently affecting this node
 - And many other attributes
 
-Calculates direction toward active attractors within a given radius. Spawns new nodes in those directions. To optimize performance, I looped through attraction points (rather than every node) and checked which nodes were within their attraction radius. Since each attractor can only affect one node, this was far more efficient than the reverse approach.
-When nodes grew close enough to an attractor (within a “kill distance”), that attractor was removed — simulating the branch reaching it. This loop continued until no new nodes were generated or the user-defined iteration limit was reached.
+Then it was time to utilize the Space Colonization algorithm. The algorithm searches for attractors that affect the nodes, then calculates the direction toward active attractors within a given attraction radius and spawns new nodes in those directions. For better clarity, see the image below. 
+To optimize performance, I looped through attraction points (rather than every node) and checked which nodes were within their attraction radius. Since each attractor can only affect one node, this was much more efficient than going through each node and each time looping through all of the attraction points.
+If the new nodes were initialized too close to the affecting attractors (so they were inside the “kill distance” radius), that attractor point was destroyed. This loop continued until no new nodes could be generated or the user-defined iteration limit was reached.
+
+![image](space_colonization/space-colonization-refe.png)
+Source: Modeling Trees with a Space Colonization Algorithm, by Adam Runions, Brendan Lane, and Przemyslaw Prusinkiewicz [(link PDF)](https://algorithmicbotany.org/papers/colonization.egwnp2007.large.pdf)
 
 ### Visualization and controls
 
 To visualize growth, I used Unity Gizmos and Debug.DrawLine() to draw branches dynamically in the Scene view.
-I also built a custom inspector to control settings in real time — adjusting attraction radius, growth iterations, and regeneration of attractor points on the fly.
-This made debugging and iteration far smoother, and gave me a clear understanding of how each parameter affected the results.
+I also built a custom inspector to control settings, adjusting attraction radius, growth iterations, and regeneration of attractor, among others.
+This made debugging and iteration smoother, and gave me a clear understanding of how each parameter affected the results.
+I also wanted to uphold the artist friendliness goal of my project. 
 
 ### Building geometry
 
-Once the algorithm worked, I wanted something tangible to show — not just Gizmos.
-At first, I instantiated cylinder prefabs for each node connection. It technically worked, but scaling and rotation issues made it visually clumsy. I realized fixing that would only lead to more complexity.
-After researching alternatives, I found a blog post ([link]) describing how to procedurally generate a single mesh for branching structures. With some help from ChatGPT, I adapted that logic to my system, allowing me to generate a unified mesh tree instead of stacking prefabs.
-For fun, I added a branch thickness gradient — branches grow thicker toward the base depending on their depth. It gave the structure more life and realism.
+Once the algorithm worked, I wanted something (digital) physical to show, not just Gizmos.
+At first, I instantiated cylinder prefabs for each node. It technically worked, but scaling and rotation issues made it visually meh. I considered fixing that, but realized this would be a bubblegum solution quickly and one fix would unavoidably generate new issues.
+After researching alternatives, I found this blog post [(link)][https://ciphrd.com/2019/09/11/generating-a-3d-growing-tree-using-a-space-colonization-algorithm/] describing how to procedurally generate a mesh tree for branching structures. With some help from ChatGPT, to help explain the code examples, I was able to understand the explanations and adapt that logic to my code, allowing me to generate a unified mesh branches instead of stacking prefabs.
+As per the Jason Webb Colinization algorithm, I also added a branch thickness leveling, branches grow thicker toward the root depending on their chain amount. It gave the branch look more realism.
 
 ![image](space_colonization/mesh.png)
 
 ## Results and Reflection
 
-The project met all my goals for this phase. The algorithm works, the branches grow correctly, and I understand the system deeply — from geometry sampling to growth iteration logic.
-From a coder’s perspective, I’m proud of the structure, clarity, and optimization.
-From an artist’s perspective, however — it still hurts a bit to look at. The system works beautifully, but it’s not yet visually beautiful.
-That’s fine. This project was about foundations. And those foundations are solid.
+The project met all my coding goals for now. The algorithm works, the branches grow correctly, and I am happy with my learning.
+From a coder’s perspective, I’m proud of the structure, clarity, and optimization of my code.
+From an artist’s perspective, my heart bleeds. The script works beautifully, but it’s not yet visually beautiful.
 
 ## Next Steps
 
-I plan to revisit this project to:
+There is still many things I want to do, and I plan to visit this project to:
 
-- Detect sharp mesh edges and generate attraction points around them
+- Detect sharp mesh edges and generate additional attraction points on the vertex points so that the branch won't go inside the mesh
 - Prevent attractor placement inside overlapping meshes
-- Improve branch thickness logic
+- Improve branch thickness logic and close the holes at the end of branches
 - Generate ivy leaves with color variation
 
-This project is a perfect example of what I love about technical art: bridging creative vision and algorithmic systems. It challenged me, expanded my Unity scripting knowledge, and reminded me how satisfying it feels to make something grow from code.
+I didn't find this project so difficult, but rather a lot of work. It was a humbling experience to realize that my beautiful Pureref references didn’t even come close to being utilized yet.
+I have never done a project like this before, and the challenge was fun and satisfying. It was also eye-opening to realize how much of what I have learned at Hive School I was able to utilize here, even though the projects we do at school have nothing to do with technical art.
+At school, we have programmed in C and C++, so C# as an object-oriented programming language felt approachable and easy to grasp. A linked list is something I have already built once, in a much more complex logic, during our schools Minishell project, so utilizing that here was a no-brainer.
+I realize that this type of project can easily be honed forever, and such projects are dangerous but also fun.
 
 
 
