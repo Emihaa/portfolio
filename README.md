@@ -4,7 +4,7 @@
 
 ## About Me
 
-Experienced 3D artist with more than 7 years of experience from the mobile game industry, including senior and lead roles. Currently expanding my technical skillset through studies at Hive Helsinki, an intensive software engineering program, to develop as a technical artist who connects art and code.
+Experienced 3D artist with more than 7 years of experience from the mobile game industry, including senior and lead roles. I am currently expanding my technical skillset through an intensive software engineering program at [Hive Helsinki](https://www.hive.fi/), to develop as a technical artist who connects art and code.
 
 ## Contact Details
 - [Linkedin](https://www.linkedin.com/in/emilia-haanp%C3%A4%C3%A4-25a88070)
@@ -105,8 +105,8 @@ This project is a perfect example of what I love about technical art: bridging c
 
 ## My First Mentor Assignment: Automating Sphere Growth in Blender with Python
 
-When I started at Hive Helsinki in October 2024, my goal was to strengthen my programming foundation to support my path toward becoming a technical artist. A year into the curriculum, I reached out to Antti Veräjänkorpi, to be my mentor and to help me build my Technical Artist portfolio.
-He gave me a Blender automation script assignment, which would give him an idea of my coding logic, spatial understanding, and creative problem-solving. The assignment sounded simple at first, but it quickly turned into a fun and challenging project that taught me far more than I expected.
+When I started at Hive Helsinki in October 2024, my goal was to strengthen my foundational programming skills to support my path toward becoming a technical artist. A year into the curriculum, I reached out to [Antti Veräjänkorpi](https://www.linkedin.com/in/anttiv79/) (Bit of Byte), asking him to be my mentor and to help me build my Technical Artist portfolio.
+He gave me a Blender automation script assignment to assess my coding skills, logical thinking, and creative problem-solving. The assignment sounded simple at first, but it quickly turned into a fun and challenging project that taught me far more than I expected.
 
 ## The Assignment
 
@@ -121,8 +121,8 @@ Constraints:
 - Non of the spheres should not overlap.
 - Each created sphere should have a randomized radius within some defined range of values.
 
-Example Image Explanation:
-Colored circles are circles in their initial state. Dashed circles around them are the state when they are i their most extended state within the given rectangular space, without overlapping.
+The Example Image Explanation:
+Colored circles show the initial state of the circles. Dashed circles around them are the state when they are I their most extended state within the given rectangular space, without overlapping.
 
 
 ## My Approach
@@ -150,11 +150,11 @@ More of that here if you are interested: [Link here.](https://extremelearning.co
 
 The feedback I received was eye-opening.
 
-Even though my script was working, and I was honestly kinda proud of it, considering it was my first Python script and I completed it within two weeks while working and studying, my mentor’s feedback made me rewrite the core of my script 3 times.
+Even though my script was working, an accomplishment I was very proud of, considering I had learned Python syntax and completed my first script with it within two weeks while working and studying, my mentor’s feedback made me rewrite the core of my script 3 times.
 The biggest lesson I learned was to separate the code from the art. Coming from a 3D art background, I naturally tend to approach problems visually. My first reaction was to spawn all the spheres immediately, because that’s what made sense visually. But in programming, especially for optimization tasks, this is unnecessary and not optimized.
 
 Instead, I learned that I should first run the logic and math in the background, and only after everything is calculated, instantiate the visuals. No one sees the spheres growing in real time anyway, so why waste computation on scaling them physically?
-This realization made my script simpler, lighter, and faster. And also smaller. I rewrote it so that each sphere became a Sphere class, storing all its necessary parameters like position and radius of the sphere. The growth now happens entirely in data, not in visible geometry, and only after the process is complete are the final spheres instantiated in Blender visible to the user.
+This realization made my script simpler, lighter, and faster. And also shorter. I rewrote it so that each sphere became a Sphere class, storing all its necessary parameters like position and radius of the sphere. The growth now happens entirely in data, not in visible geometry, and only after the process is complete are the final spheres instantiated in Blender visible to the user.
 
 The second major improvement was code reusability. My first solution used a custom white-noise system to scatter the spheres randomly without overlap. It worked, but it was just a bit unnecessary. In my rewritten version, I added a checkCollision() function to handle overlap detection and reused that same function for both position generation and the growth logic.
 This meant less code, more clarity, and better readability.
@@ -187,7 +187,7 @@ In both courses, I combine artistic principles with technical workflows, giving 
 ![image](environment-design/3DEnvironmentDesign.png)
 *Image example of my course planning from Spring 2025*
 
-I designed and developed this course from the ground up, including its structure, assignments, and study materials. In my course, students learn the complete 3D asset creation pipeline, starting with Blender and progressing all the way into a game engine. I provide tailored study materials, including articles I have written and resources from other industry professionals. The course is structured around both individual and team projects: smaller assignments and case studies build technical foundations, while a larger 3D environment project gives students the chance to apply their skills in a teamwork setting. I am solely responsible for managing deadlines, student communication, and feedback, delivering the course through a mix of online lectures, hands-on workshops, and regular critique sessions.
+As I did with the 3D Character Design course, I designed and developed this course from the ground up as well, including its structure, assignments, and study materials. In my course, students learn the complete 3D asset creation pipeline, starting with Blender and progressing all the way into a game engine. I provide tailored study materials, including articles I have written and resources from other industry professionals. The course is structured around both individual and team projects: smaller assignments and case studies build technical foundations, while a larger 3D environment project gives students the chance to apply their skills in a teamwork setting. I am solely responsible for managing deadlines, student communication, and feedback, delivering the course through a mix of online lectures, hands-on workshops, and regular critique sessions.
 
 
 ![image](environment-design/PBR-materials-textures.png)
