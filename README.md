@@ -16,7 +16,11 @@ Experienced 3D artist with more than 7 years of experience from the mobile game 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Technical Artist projects
+[Space Colonization Algorithm in Unity](2.md)    |   [Blender automatization script](2.md) 
 
+## Teaching Cources / Xamk
+[3D Environment Art](2.md)    |    [3D Character Art](2.md) 
 
 # Technical Artist, blog
 
@@ -225,6 +229,4 @@ I designed this course from the ground up, creating its structure, assignments, 
 
 ![image](character-design/character-model.png)
 *Example of 3D character design during one of the phases within the course*
-
-[page2](2.md)
 
