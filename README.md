@@ -226,3 +226,5 @@ I designed this course from the ground up, creating its structure, assignments, 
 ![image](character-design/character-model.png)
 *Example of 3D character design during one of the phases within the course*
 
+[page2](2.md)
+
