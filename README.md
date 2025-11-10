@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="assets/css/custom.css">
+
 # Technical Artist Portfolio
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -18,64 +20,19 @@ Experienced 3D artist with more than 7 years of experience from the mobile game 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Technical Artist projects
 
-<section id="portfolio">
-  <div class="container"> 
-    <div class="row"> 
-      <div class="col-lg-12 text-center"> 
-        <h2>Portfolio</h2> 
-        <hr class="star-primary"> 
-      </div> 
-    </div> 
-    <div class="row"> 
-      <div class="col-sm-4 portfolio-item"> 
-        <a href="https://emihaa.github.io/portfolio/2.md" class="portfolio-link"> 
-          <div class="caption"> 
-          <div class="caption-content"> 
-            <i class="fa fa-search-plus fa-3x"></i> 
-          </div> 
-        </div> 
-          <img src="https://raw.githubusercontent.com/Emihaa/portfolio/refs/heads/main/space_colonization/space-UI2.png" class="img-responsive"
-           alt="image-alt"
-           width="200">
-        </a> 
-      </div> 
-      <div class="col-sm-4 portfolio-item"> 
-        <a href="https://emihaa.github.io/portfolio/2.md" class="portfolio-link"> 
-          <div class="caption"> 
-            <div class="caption-content"> 
-              <i class="fa fa-search-plus fa-3x"></i> 
-            </div> 
-          </div> 
-          <img src="https://raw.githubusercontent.com/Emihaa/portfolio/refs/heads/main/space_colonization/space-UI2.png" class="img-responsive"
-           alt="image-alt"
-           width="200">
-        </a> 
-      </div> 
-      <div class="col-sm-4 portfolio-item"> 
-        <a href="https://emihaa.github.io/portfolio/2.md" class="portfolio-link"> 
-          <div class="caption"> <div class="caption-content"> 
-            <i class="fa fa-search-plus fa-3x"></i> 
-          </div> 
-          </div> 
-          <img src="https://raw.githubusercontent.com/Emihaa/portfolio/refs/heads/main/space_colonization/space-UI2.png" class="img-responsive"
-           alt="image-alt"
-           width="200">
-        </a> 
-      </div> <div class="col-sm-4 portfolio-item"> 
-        <a href="https://emihaa.github.io/portfolio/2.md" class="portfolio-link"> 
-          <div class="caption"> 
-            <div class="caption-content"> 
-              <i class="fa fa-search-plus fa-3x"></i> 
-            </div> 
-          </div> 
-          <img src="https://raw.githubusercontent.com/Emihaa/portfolio/refs/heads/main/space_colonization/space-UI2.png" class="img-responsive"
-           alt="image-alt"
-           width="200">
-        </a> 
-      </div>
-    </div> 
-  </div> 
-</section>
+<div class="portfolio-grid">
+  <div class="portfolio-item">
+    <a href="https://emihaa.github.io/portfolio/2.md" class="portfolio-link">
+      <img src="https://raw.githubusercontent.com/Emihaa/portfolio/refs/heads/main/space_colonization/space-UI2.png" alt="image" width="200">
+    </a>
+  </div>
+
+  <div class="portfolio-item">
+    <a href="https://emihaa.github.io/portfolio/2.md" class="portfolio-link">
+      <img src="https://raw.githubusercontent.com/Emihaa/portfolio/refs/heads/main/space_colonization/space-UI2.png" alt="image" width="200">
+    </a>
+  </div>
+</div>
 
 [Space Colonization Algorithm in Unity](2.md)    |   [Blender automatization script](2.md) 
 
