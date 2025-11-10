@@ -25,7 +25,7 @@ Experienced 3D artist with more than 7 years of experience from the mobile game 
       <a class="group relative flex flex-col items-stretch" href="https://emihaa.github.io/portfolio/2.md">
         <div class="aspect-[4/3] overflow-hidden">
           <img 
-            src="https://raw.githubusercontent.com/Emihaa/portfolio/refs/heads/main/space_colonization/space-UI2.png"
+            src="https://raw.githubusercontent.com/Emihaa/portfolio/refs/heads/main/space_colonization/space-UI2.png?w=400 400w"
             srcset="https://raw.githubusercontent.com/Emihaa/portfolio/refs/heads/main/space_colonization/space-UI2.png?w=960 960w"
             alt="Space Colonization Unity UI screenshot"
             loading="lazy"
@@ -41,7 +41,7 @@ Experienced 3D artist with more than 7 years of experience from the mobile game 
       <a class="group relative flex flex-col items-stretch" href="https://emihaa.github.io/portfolio/2.md">
         <div class="aspect-[4/3] overflow-hidden">
           <img 
-            src="https://raw.githubusercontent.com/Emihaa/portfolio/refs/heads/main/space_colonization/space-UI2.png"
+            src="https://raw.githubusercontent.com/Emihaa/portfolio/refs/heads/main/space_colonization/space-UI2.png?w=400 400w"
             srcset="https://raw.githubusercontent.com/Emihaa/portfolio/refs/heads/main/space_colonization/space-UI2.png?w=960 960w"
             alt="Space Colonization Lines screenshot"
             loading="lazy"
