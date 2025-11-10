@@ -18,47 +18,67 @@ Experienced 3D artist with more than 7 years of experience from the mobile game 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Technical Artist projects
 
-<div class="container mx-auto">
-  <ul class="grid max-w-[1920px] grid-cols-1 gap-x-2 gap-y-10 px-1 lg:grid-cols-2 4xl:grid-cols-3 4xl:gap-x-2 4xl:px-2 list-none"> 
-    <!-- Project 1 -->
-    <li>
-      <a class="group relative flex flex-col items-stretch" href="https://emihaa.github.io/portfolio/2.md">
-        <div class="aspect-[4/3] overflow-hidden">
-          <img 
-            src="https://raw.githubusercontent.com/Emihaa/portfolio/refs/heads/main/space_colonization/space-UI2.png?w=400 400w"
-            srcset="https://raw.githubusercontent.com/Emihaa/portfolio/refs/heads/main/space_colonization/space-UI2.png?w=960 960w"
-            alt="Space Colonization Unity UI screenshot"
-            loading="lazy"
-            class="h-full w-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105">
-        </div>
-        <h2 class="mt-2 px-4 text-center font-bold group-hover:underline lg:text-xl">
-          Space Colonization Algorithm in Unity
-        </h2>
-      </a>
-    </li>
-    <!-- Project 2 -->
-    <li>
-      <a class="group relative flex flex-col items-stretch" href="https://emihaa.github.io/portfolio/2.md">
-        <div class="aspect-[4/3] overflow-hidden">
-          <img 
-            src="https://raw.githubusercontent.com/Emihaa/portfolio/refs/heads/main/space_colonization/space-UI2.png?w=400 400w"
-            srcset="https://raw.githubusercontent.com/Emihaa/portfolio/refs/heads/main/space_colonization/space-UI2.png?w=960 960w"
-            alt="Space Colonization Lines screenshot"
-            loading="lazy"
-            class="h-full w-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105">
-        </div>
-        <h2 class="mt-2 px-4 text-center font-bold group-hover:underline lg:text-xl">
-          Blender Python Script
-        </h2>
-      </a>
-    </li>
-  </ul>
-</div>
-
+<section id="portfolio">
+  <div class="container"> 
+    <div class="row"> 
+      <div class="col-lg-12 text-center"> 
+        <h2>Portfolio</h2> 
+        <hr class="star-primary"> 
+      </div> 
+    </div> 
+    <div class="row"> 
+      <div class="col-sm-4 portfolio-item"> 
+        <a href="https://emihaa.github.io/portfolio/2.md" class="portfolio-link"> 
+          <div class="caption"> 
+          <div class="caption-content"> 
+            <i class="fa fa-search-plus fa-3x"></i> 
+          </div> 
+        </div> 
+          <img src="https://raw.githubusercontent.com/Emihaa/portfolio/refs/heads/main/space_colonization/space-UI2.png" class="img-responsive"
+           alt="image-alt"
+           width="200">
+        </a> 
+      </div> 
+      <div class="col-sm-4 portfolio-item"> 
+        <a href="https://emihaa.github.io/portfolio/2.md" class="portfolio-link"> 
+          <div class="caption"> 
+            <div class="caption-content"> 
+              <i class="fa fa-search-plus fa-3x"></i> 
+            </div> 
+          </div> 
+          <img src="https://raw.githubusercontent.com/Emihaa/portfolio/refs/heads/main/space_colonization/space-UI2.png" class="img-responsive"
+           alt="image-alt"
+           width="200">
+      </div> 
+      <div class="col-sm-4 portfolio-item"> 
+        <a href="https://emihaa.github.io/portfolio/2.md" class="portfolio-link"> 
+          <div class="caption"> <div class="caption-content"> 
+            <i class="fa fa-search-plus fa-3x"></i> 
+          </div> 
+          </div> 
+          <img src="https://raw.githubusercontent.com/Emihaa/portfolio/refs/heads/main/space_colonization/space-UI2.png" class="img-responsive"
+           alt="image-alt"
+           width="200">
+        </a> 
+      </div> <div class="col-sm-4 portfolio-item"> 
+        <a href="https://emihaa.github.io/portfolio/2.md" class="portfolio-link"> 
+          <div class="caption"> 
+            <div class="caption-content"> 
+              <i class="fa fa-search-plus fa-3x"></i> 
+            </div> 
+          </div> 
+          <img src="https://raw.githubusercontent.com/Emihaa/portfolio/refs/heads/main/space_colonization/space-UI2.png" class="img-responsive"
+           alt="image-alt"
+           width="200">
+        </a> 
+      </div>
+    </div> 
+  </div> 
+</section>
 
 [Space Colonization Algorithm in Unity](2.md)    |   [Blender automatization script](2.md) 
 
-## Teaching Cources / Xamk
+## Teaching Courses / Xamk
 [3D Environment Art](2.md)    |    [3D Character Art](2.md) 
 
 # Technical Artist, blog
