@@ -38,7 +38,6 @@ Experienced 3D artist with more than 7 years of experience from the mobile game 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Course lecturer at Xamk, University of Applied Sciences
 
@@ -51,22 +50,20 @@ In both courses, I combine artistic principles with technical workflows, giving 
 <div class="portfolio-grid">
   <div class="portfolio-item">
     <a href="https://emihaa.github.io/portfolio/environment-design/3Denvironment.html" class="portfolio-link">
-      <img src="https://raw.githubusercontent.com/Emihaa/portfolio/refs/heads/main/space_colonization/space-UI2.png" alt="image" width="200">
+      <img src="https://raw.githubusercontent.com/Emihaa/portfolio/refs/heads/main/environment-design/ui-4.png" alt="image" width="200">
     </a>
   </div>
 
   <div class="portfolio-item">
     <a href="https://emihaa.github.io/portfolio/character-design/3dcharacter.html" class="portfolio-link">
-      <img src="https://raw.githubusercontent.com/Emihaa/portfolio/refs/heads/main/space_colonization/space-UI2.png" alt="image" width="200">
+      <img src="https://raw.githubusercontent.com/Emihaa/portfolio/refs/heads/main/character-design/ui-3.png" alt="image" width="200">
     </a>
   </div>
 </div>
 
 [3D Environment Art](https://emihaa.github.io/portfolio/environment-design/3Denvironment.html)    |    [3D Character Art](https://emihaa.github.io/portfolio/character-design/3dcharacter.html) 
 
-
-
-
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
