@@ -49,6 +49,7 @@ Experienced 3D artist with more than 7 years of experience from the mobile game 
           <img src="https://raw.githubusercontent.com/Emihaa/portfolio/refs/heads/main/space_colonization/space-UI2.png" class="img-responsive"
            alt="image-alt"
            width="200">
+        </a> 
       </div> 
       <div class="col-sm-4 portfolio-item"> 
         <a href="https://emihaa.github.io/portfolio/2.md" class="portfolio-link"> 
