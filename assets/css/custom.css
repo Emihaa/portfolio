@@ -10,7 +10,7 @@
   display: block;
 }
 .portfolio-item:hover img {
-  transform: scale(0.95);
+  transform: scale(1.05);
 }
 .portfolio-caption {
   text-align: center;
