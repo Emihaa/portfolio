@@ -15,14 +15,14 @@ Planned features included:
 - Masking growth areas
 - Generating leaves and adjusting branch thickness
 
-![image](space_colonization/pureref.png)
+![image](pureref.png)
 (Really ambitious, I know)
 
 ## Research
 
 I started by studying the algorithm first. The article “Modeling Organic Branching Structures with the Space Colonization Algorithm and JavaScript” by Jason Webb [(link)](https://medium.com/@jason.webb/space-colonization-algorithm-in-javascript-6f683b743dc5) was the best thing that made the algorithm click for me. It explained the foundation of the algorithm clearly so that I felt that I could write it into C# and Unity’s environment.
 
-![image](space_colonization/lines.png)
+![image](lines.png)
 
 ## Implementation
 
@@ -46,7 +46,7 @@ Then it was time to utilize the Space Colonization algorithm. The algorithm sear
 To optimize performance, I looped through attraction points (rather than every node) and checked which nodes were within their attraction radius. Since each attractor can only affect one node, this was much more efficient than going through each node and each time looping through all of the attraction points.
 If the new nodes were initialized too close to the affecting attractors (so they were inside the “kill distance” radius), that attractor point was destroyed. This loop continued until no new nodes could be generated or the user-defined iteration limit was reached.
 
-![image](space_colonization/space-colonization-refe.png)
+![image](space-colonization-refe.png)
 Source: Modeling Trees with a Space Colonization Algorithm, by Adam Runions, Brendan Lane, and Przemyslaw Prusinkiewicz [(link PDF)](https://algorithmicbotany.org/papers/colonization.egwnp2007.large.pdf)
 
 ### Visualization and controls
@@ -63,7 +63,7 @@ At first, I instantiated cylinder prefabs for each node. It technically worked, 
 After researching alternatives, I found this blog post [(link)](https://ciphrd.com/2019/09/11/generating-a-3d-growing-tree-using-a-space-colonization-algorithm/) describing how to procedurally generate a mesh tree for branching structures. With some help from ChatGPT, to help explain the code examples, I was able to understand the explanations and adapt that logic to my code, allowing me to generate a unified mesh branches instead of stacking prefabs.
 As per the Jason Webb Colinization algorithm, I also added a branch thickness leveling, branches grow thicker toward the root depending on their chain amount. It gave the branch look more realism.
 
-![image](space_colonization/mesh.png)
+![image](mesh.png)
 
 ## Results and Reflection
 
@@ -73,7 +73,7 @@ From an artist’s perspective, my heart bleeds. The script works beautifully, b
 
 ## Next Steps
 
-There is still many things I want to do, and I plan to visit this project at some point to:
+There are still many things I want to do, and I plan to visit this project at some point to:
 
 - Detect sharp mesh edges and generate additional attraction points on the vertex points so that the branch won't go inside the mesh
 - Prevent attractor placement inside overlapping meshes
