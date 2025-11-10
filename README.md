@@ -25,16 +25,16 @@ Experienced 3D artist with more than 7 years of experience from the mobile game 
     <a href="https://emihaa.github.io/portfolio/space_colonization/space_colonization.html" class="portfolio-link">
       <img src="https://raw.githubusercontent.com/Emihaa/portfolio/refs/heads/main/space_colonization/ui-1.png" alt="image" width="200">
     </a>
+    <p class="portfolio-caption">Space Colonization Algorithm in Unity</p>
   </div>
 
   <div class="portfolio-item">
     <a href="https://emihaa.github.io/portfolio/Blender-Spheres/blender-spheres.html" class="portfolio-link">
       <img src="https://raw.githubusercontent.com/Emihaa/portfolio/refs/heads/main/Blender-Spheres/ui-2.png" alt="image" width="200">
     </a>
+    <p class="portfolio-caption">Blender automatization script</p>
   </div>
 </div>
-
-[Space Colonization Algorithm in Unity](https://emihaa.github.io/portfolio/space_colonization/space_colonization.html)    |   [Blender automatization script](https://emihaa.github.io/portfolio/Blender-Spheres/blender-spheres.html) 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -52,16 +52,17 @@ In both courses, I combine artistic principles with technical workflows, giving 
     <a href="https://emihaa.github.io/portfolio/environment-design/3Denvironment.html" class="portfolio-link">
       <img src="https://raw.githubusercontent.com/Emihaa/portfolio/refs/heads/main/environment-design/ui-4.png" alt="image" width="200">
     </a>
+    <p class="portfolio-caption">3D Environment Design</p>
   </div>
 
   <div class="portfolio-item">
     <a href="https://emihaa.github.io/portfolio/character-design/3dcharacter.html" class="portfolio-link">
       <img src="https://raw.githubusercontent.com/Emihaa/portfolio/refs/heads/main/character-design/ui-3.png" alt="image" width="200">
     </a>
+    <p class="portfolio-caption">3D Character Design</p>
   </div>
 </div>
 
-[3D Environment Design](https://emihaa.github.io/portfolio/environment-design/3Denvironment.html)    |    [3D Character Design](https://emihaa.github.io/portfolio/character-design/3dcharacter.html) 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
