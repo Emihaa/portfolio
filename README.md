@@ -61,7 +61,7 @@ In both courses, I combine artistic principles with technical workflows, giving 
   </div>
 </div>
 
-[3D Environment Art](https://emihaa.github.io/portfolio/environment-design/3Denvironment.html)    |    [3D Character Art](https://emihaa.github.io/portfolio/character-design/3dcharacter.html) 
+[3D Environment Design](https://emihaa.github.io/portfolio/environment-design/3Denvironment.html)    |    [3D Character Design](https://emihaa.github.io/portfolio/character-design/3dcharacter.html) 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
