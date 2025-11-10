@@ -6,4 +6,9 @@
 .portfolio-item img {
   width: 100%;
   height: auto;
+  transition: transform 0.25s ease;
+  display: block;
+}
+.portfolio-item:hover img {
+  transform: scale(1.07);
 }
