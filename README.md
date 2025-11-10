@@ -37,6 +37,21 @@ Experienced 3D artist with more than 7 years of experience from the mobile game 
 [Space Colonization Algorithm in Unity](2.md)    |   [Blender automatization script](2.md) 
 
 ## Teaching Courses / Xamk
+
+<div class="portfolio-grid">
+  <div class="portfolio-item">
+    <a href="https://emihaa.github.io/portfolio/2.md" class="portfolio-link">
+      <img src="https://raw.githubusercontent.com/Emihaa/portfolio/refs/heads/main/space_colonization/space-UI2.png" alt="image" width="200">
+    </a>
+  </div>
+
+  <div class="portfolio-item">
+    <a href="https://emihaa.github.io/portfolio/2.md" class="portfolio-link">
+      <img src="https://raw.githubusercontent.com/Emihaa/portfolio/refs/heads/main/space_colonization/space-UI2.png" alt="image" width="200">
+    </a>
+  </div>
+</div>
+
 [3D Environment Art](2.md)    |    [3D Character Art](2.md) 
 
 # Technical Artist, blog
