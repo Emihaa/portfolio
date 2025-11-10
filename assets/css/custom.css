@@ -12,3 +12,13 @@
 .portfolio-item:hover img {
   transform: scale(0.9);
 }
+.portfolio-caption {
+  text-align: center;
+  margin-top: 8px;
+  transition: color 0.25s ease, font-weight 0.25s ease;
+  color: #333;
+}
+.portfolio-item:hover .portfolio-caption {
+  color: #1a73e8;
+  font-weight: 600;
+}
