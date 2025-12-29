@@ -2,74 +2,26 @@
 
 ## Assignment Context
 
-My third mentor assignment was to design and implement a maze generation algorithm. The primary constraint was that the maze had to be built from cubes rather than lines, which pushed the solution toward a grid-based representation instead of a traditional line-drawn maze.
-
-In addition to the core task, there were optional bonus objectives: ensuring that all areas of the maze were accessible and implementing a seed argument so that the same seed would always generate the same maze.
-
-## Technology Choices
-
-![image](assignment.png)
-
-Before implementing the algorithm itself, I spent time deciding which language and tools to use. My previous project had been written in C#, and using C again felt unnecessary for this assignment. After discussing the options with my mentor, I chose Python, as it is commonly expected from technical artists and would strengthen my portfolio with another relevant example.
-
-For visualization, my mentor initially suggested Python’s turtle module. While easy to learn, it did not feel like the right fit for this project. Instead, I chose to use Pygame, as its rendering and event-handling model felt closer to the MLX42 graphics library we had previously used in school projects.
-
-Setting up Pygame on my Windows laptop turned out to be the most challenging part of the project. Installing the required environment and resolving dependency issues took considerable effort, and interpreting error messages was often non-trivial. In this phase, tools like ChatGPT were invaluable in helping me understand installation errors and move forward efficiently.
+This project was created as part of a mentor assignment focused on algorithmic thinking and procedural generation. The main constraint was that the maze had to be built using cubes instead of lines, which pushed the solution toward a grid-based representation rather than a traditional line-drawn maze. Optional bonus goals included ensuring full maze accessibility and supporting deterministic generation using a seed value.
 
 
-## Maze Representation and Core Algorithm
+![image](maze2.png)
 
-The maze is represented as a grid of cubes, each classified as a border, wall, or room. The algorithm begins by creating an initial grid layout and then randomly selecting wall cubes as candidates for removal.
+After discussing tool choices with my mentor, I decided to implement the project in Python, as it is commonly expected from technical artists and a meaningful addition to my portfolio. For visualization, I chose Pygame instead of Python’s turtle module, as Pygame’s rendering and event-handling model felt closer to the MLX42 graphics library we had used in earlier school projects.
 
-For each selected wall, the algorithm evaluates whether removing it would correctly connect two separate rooms. Only walls that separate exactly two rooms are eligible for removal, ensuring that the maze remains fully connected without introducing unintended shortcuts or loops.
+The maze itself is represented as a grid of cubes classified as borders, walls, or rooms. During generation, wall cubes are randomly selected and evaluated for removal. A wall can only be removed if it separates exactly two previously unconnected rooms, ensuring that the maze remains fully traversable without introducing unintended shortcuts. The overall approach is inspired by Kruskal-style maze generation, adapted to a cube-based grid.
 
-This logic closely follows the principles behind Kruskal-style maze generation, adapted to a cube-based grid representation rather than line segments.
-      
- ![images](Blender-screenshot.png)
+To validate connectivity, I implemented a flood fill algorithm. When evaluating a wall, flood fill is run from both sides to determine whether the adjacent rooms are already connected. If they share reachable areas, the wall must remain; if not, it can safely be removed. While the logic was straightforward and worked correctly, this part of the code revealed opportunities for cleaner structure and refactoring.
 
+Maze generation is visualized in real time using Pygame. I implemented an animated generation loop along with basic keyboard controls to pause and reset the process, adjust generation speed, and change the random seed during runtime. Using a fixed seed ensures that the same input always produces the same maze layout.
 
-## Flood Fill for Connectivity Validation
+One of the key lessons from this project was related to code organization. Early reliance on tutorials that used global variables made later refactoring difficult. In hindsight, the project would have benefited from a clearer class-based structure encapsulating maze state and behavior. Despite this, the code functions reliably, and the experience highlighted areas where I want to improve my approach to clean and maintainable code.
 
-To determine whether two rooms are already connected, I implemented a flood fill algorithm. Starting from a given room, the flood fill recursively explores neighboring cubes in the north, east, south, and west directions, collecting all reachable rooms into a list.
+The project later proved useful beyond its original scope. I extended the maze with entrance and exit points and implemented a breadth-first search pathfinding algorithm to find the shortest path through the maze. This served as a practical stepping stone before implementing similar pathfinding logic in Go for a separate school competition project.
 
-When evaluating a wall, the algorithm performs flood fills on both sides of the wall and compares the resulting room lists. If the lists share common rooms, the areas are already connected, and the wall must not be removed. If the wall separates exactly two unconnected rooms, it can safely be removed.
+![image](maze1.png)
 
-While the logic itself was straightforward, this part of the implementation highlighted opportunities for a cleaner structure. The code worked correctly but was more verbose than necessary, and in hindsight could have been refactored into a more compact and reusable form.
-
-## Visualization and Interaction
-
-Rather than generating the maze instantly, I wanted the creation process to be visible in real time. Using Pygame’s event system, I implemented an animated generation loop that visualizes the maze as it is being built.
-
-To improve usability and experimentation, I also added basic keyboard controls that allow the user to pause and reset the generation, adjust the animation speed, and change the seed value during runtime. Although Pygame’s event handling can feel somewhat cumbersome, it provides enough flexibility to support these interactive features.
-
-## Bonus Features
-
-Implementing a deterministic seed was straightforward using Python’s built-in random module. By initializing the random generator with a fixed seed value, the algorithm always selects cubes in the same order, producing identical maze layouts for the same seed.
-
-The second bonus objective — ensuring that all maze areas are accessible — is effectively guaranteed by the algorithm itself. Since walls are only removed when they connect exactly two previously unconnected rooms, the resulting maze is always fully traversable.
-
-## Code Structure and Lessons Learned
-
-One of the most important lessons from this project was related to code organization. Many Pygame tutorials rely heavily on global variables, and by following that structure early on, I made later refactoring significantly more difficult.
-
-Ideally, the project should have been built around a dedicated class encapsulating the maze state and its behavior. Due to time constraints, I chose to complete the project using the existing structure, fully aware that the code was functional but not as clean or modular as it could be.
-
-Based on this experience, my mentor recommended further reading on clean code practices, an insight I fully agree with and plan to apply in future projects.
-
-## Extending the Project: Pathfinding
-
-After completing the maze generator, the project proved useful beyond its original scope. In a school-organized challenge where teams competed by writing AI for a turn-based strategy game, I volunteered to implement the pathfinding and scouting logic.
-
-I extended this project by adding entrance and exit points to the maze and implemented a breadth-first search algorithm to find the shortest path between them. Since there is only one exit, the algorithm can terminate early as soon as the exit is found, returning the shortest path or null if no path exists.
-
-This implementation served as a practical stepping stone before implementing similar pathfinding logic in Go for the competition project.
-
-## Conclusion
-
-Overall, this project achieved its goals successfully. It resulted in a functional and visually clear maze generator while providing valuable experience in algorithm design, grid-based logic, visualization, and real-time interaction.
-
-While the current codebase would benefit from a full rewrite to improve structure and cleanliness, the project itself stands as a strong portfolio example. It also influenced my approach to future work by reinforcing the importance of planning code structure earlier, especially when following tutorials. I plan to revisit and refine this project in the future, applying the lessons learned to create a cleaner and more maintainable implementation.
-
+Overall, this project achieved its goals and stands as a strong portfolio example. It combines procedural generation, grid-based logic, real-time visualization, and algorithmic validation, while also marking an important learning step toward better planning and cleaner code structure in future projects.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
