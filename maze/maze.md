@@ -5,13 +5,15 @@
 This project was created as part of a mentor assignment focused on algorithmic thinking and procedural generation. The main constraint was that the maze had to be built using cubes instead of lines, which pushed the solution toward a grid-based representation rather than a traditional line-drawn maze. Optional bonus goals included ensuring full maze accessibility and supporting deterministic generation using a seed value.
 
 
-![image](maze2.png)
+![image](maze0.png)
 
 After discussing tool choices with my mentor, I decided to implement the project in Python, as it is commonly expected from technical artists and a meaningful addition to my portfolio. For visualization, I chose Pygame instead of Python’s turtle module, as Pygame’s rendering and event-handling model felt closer to the MLX42 graphics library we had used in earlier school projects.
 
 The maze itself is represented as a grid of cubes classified as borders, walls, or rooms. During generation, wall cubes are randomly selected and evaluated for removal. A wall can only be removed if it separates exactly two previously unconnected rooms, ensuring that the maze remains fully traversable without introducing unintended shortcuts. The overall approach is inspired by Kruskal-style maze generation, adapted to a cube-based grid.
 
 To validate connectivity, I implemented a flood fill algorithm. When evaluating a wall, flood fill is run from both sides to determine whether the adjacent rooms are already connected. If they share reachable areas, the wall must remain; if not, it can safely be removed. While the logic was straightforward and worked correctly, this part of the code revealed opportunities for cleaner structure and refactoring.
+
+![image](maze2.png)
 
 Maze generation is visualized in real time using Pygame. I implemented an animated generation loop along with basic keyboard controls to pause and reset the process, adjust generation speed, and change the random seed during runtime. Using a fixed seed ensures that the same input always produces the same maze layout.
 
