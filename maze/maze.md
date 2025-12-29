@@ -5,7 +5,7 @@
 This project was created as part of a mentor assignment focused on algorithmic thinking and procedural generation. The main constraint was that the maze had to be built using cubes instead of lines, similar to [Kruskals Algorithm](https://medium.com/@batbat.senturk/kruskals-algorithm-the-most-visually-satisfying-maze-generation-c5c565844a4e), which pushed the solution toward a grid-based representation rather than a line-drawn maze. Optional bonus goals included ensuring full maze accessibility and supporting generation using a seed value.
 
 
-<img src="maze0.png" width="300">
+<img src="maze0.png" width="300" style="display: block; margin: 0 auto;">
 
 ## Start
 
@@ -17,7 +17,7 @@ The maze itself is represented as a 2D grid of cubes classified as borders, wall
 
 To validate connectivity, I implemented a recursive flood fill algorithm. When given randomly a wall, flood fill is run from all sides (north, east, south, and west) to determine whether the adjacent rooms are already connected to each other. If they share reachable areas, they are part of the same room, if not, we can calculate them as separate rooms. The wall is only removed if is connected to two different rooms. While the logic was straightforward and works correctly, I do notice a need for cleaner code and optimisation as my flood fill functions turned out a bit messy.
 
-<img src="maze2.png" width="300">
+<img src="maze2.png" width="300" style="display: block; margin: 0 auto;">
 
 ## Visualization and UX
 
@@ -29,7 +29,7 @@ One of the key lessons from this project was related to code organization. Early
 
 The project later proved useful beyond its original meaning. I extended the maze with start and exit points and implemented a breadth-first search pathfinding algorithm to find the shortest path through the maze. I used this brilliant [Red Blob Games website](https://www.redblobgames.com/pathfinding/a-star/introduction.html) as a guide for my implementation. This served as an excellent foundation to learn pathfinding algorithm logic before implementing similar pathfinding in Go language for a separate school competition project as I had never done anything in Go before.
 
-<img src="maze1.png" width="300">
+<img src="maze1.png" width="300" style="display: block; margin: 0 auto;">
 
 ## Results
 
