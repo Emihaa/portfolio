@@ -22,6 +22,14 @@ Experienced 3D artist with more than 7 years of experience from the mobile game 
 
 <div class="portfolio-grid">
   <div class="portfolio-item">
+    <a href="https://emihaa.github.io/portfolio/maze/maze.html"
+    class="portfolio-link">
+      <img src="https://raw.githubusercontent.com/Emihaa/portfolio/refs/heads/main/maze/ui-3.png" alt="image" width="200">
+    <p class="portfolio-caption">Maze Generation in Python</p>
+    </a>
+  </div>
+
+  <div class="portfolio-item">
     <a href="https://emihaa.github.io/portfolio/space_colonization/space_colonization.html" class="portfolio-link">
       <img src="https://raw.githubusercontent.com/Emihaa/portfolio/refs/heads/main/space_colonization/ui-1.png" alt="image" width="200">
     <p class="portfolio-caption">Space Colonization Algorithm in Unity</p>
