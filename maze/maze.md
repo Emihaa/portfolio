@@ -1,67 +1,74 @@
-# [Automated Blender Script, Python September 2025](https://github.com/Emihaa/BlenderSpheres)
+# [Maze Generation in Python, September 2025](https://github.com/Emihaa/MazeAlgorithm)
 
-## My First Mentor Assignment: Automating Sphere Growth in Blender with Python
+## Assignment Context
 
-When I started at Hive Helsinki in October 2024, my goal was to strengthen my foundational programming skills to support my path toward becoming a technical artist. A year into the curriculum, I reached out to [Antti Veräjänkorva](https://www.linkedin.com/in/anttiv79/) (Bit of Byte), asking him to be my mentor and to help me build my Technical Artist portfolio.
-He gave me a Blender automation script assignment to assess my coding skills, logical thinking, and creative problem-solving. The assignment sounded simple at first, but it quickly turned into a fun and challenging project that taught me far more than I expected.
+My third mentor assignment was to design and implement a maze generation algorithm. The primary constraint was that the maze had to be built from cubes rather than lines, which pushed the solution toward a grid-based representation instead of a traditional line-drawn maze.
 
-## The Assignment
+In addition to the core task, there were optional bonus objectives: ensuring that all areas of the maze were accessible and implementing a seed argument so that the same seed would always generate the same maze.
+
+## Technology Choices
 
 ![image](assignment.png)
 
-Goal:
-- Create a Blender script that optimizes circle or sphere sizes to their maximum extent.
-- Do this within the given rectangular space (optional).
+Before implementing the algorithm itself, I spent time deciding which language and tools to use. My previous project had been written in C#, and using C again felt unnecessary for this assignment. After discussing the options with my mentor, I chose Python, as it is commonly expected from technical artists and would strengthen my portfolio with another relevant example.
 
-Constraints:
-- Should have input to define how many spheres there is.
-- Non of the spheres should not overlap.
-- Each created sphere should have a randomized radius within some defined range of values.
+For visualization, my mentor initially suggested Python’s turtle module. While easy to learn, it did not feel like the right fit for this project. Instead, I chose to use Pygame, as its rendering and event-handling model felt closer to the MLX42 graphics library we had previously used in school projects.
 
-The Example Image Explanation:
-Colored circles show the initial state of the circles. Dashed circles around them are the state when they are I their most extended state within the given rectangular space, without overlapping.
+Setting up Pygame on my Windows laptop turned out to be the most challenging part of the project. Installing the required environment and resolving dependency issues took considerable effort, and interpreting error messages was often non-trivial. In this phase, tools like ChatGPT were invaluable in helping me understand installation errors and move forward efficiently.
 
 
-## My Approach
+## Maze Representation and Core Algorithm
 
-I had two weeks to complete the assignment. This was my first time scripting in Blender and also my first project in Python, so I had to learn both the Blender API and the Python syntax.
-I first figured out how to instantiate the spheres in Blender based on the given constraints (inside a box basically).
+The maze is represented as a grid of cubes, each classified as a border, wall, or room. The algorithm begins by creating an initial grid layout and then randomly selecting wall cubes as candidates for removal.
 
-After that, I built a while loop that iteratively grew each sphere. In each iteration:
-The script calculated the distance between every pair of spheres.
-It subtracted the radii of both spheres from that distance and halved the result.
-That value determined how much each sphere could grow without overlapping.
-If the remaining space between any two spheres was smaller than a given epsilon threshold, the growth stopped.
-Then do the same to the next sphere.
+For each selected wall, the algorithm evaluates whether removing it would correctly connect two separate rooms. Only walls that separate exactly two rooms are eligible for removal, ensuring that the maze remains fully connected without introducing unintended shortcuts or loops.
 
-When none of the spheres could grow anymore, the loop ended, leaving a set of perfectly optimized, non-overlapping spheres filling the space.
-The last thing I did was this white-noise scatter logic to generate random initial positions for the spheres, making sure none of them spawned inside each other.
-
-More of that here if you are interested: [Link here.](https://extremelearning.com.au/unreasonable-effectiveness-of-quasirandom-sequences/)
-  
+This logic closely follows the principles behind Kruskal-style maze generation, adapted to a cube-based grid representation rather than line segments.
       
  ![images](Blender-screenshot.png)
 
 
-## The Feedback
+## Flood Fill for Connectivity Validation
 
-The feedback I received was eye-opening.
+To determine whether two rooms are already connected, I implemented a flood fill algorithm. Starting from a given room, the flood fill recursively explores neighboring cubes in the north, east, south, and west directions, collecting all reachable rooms into a list.
 
-Even though my script was working, an accomplishment I was very proud of, considering I had learned Python syntax and completed my first script with it within two weeks while working and studying, my mentor’s feedback made me rewrite the core of my script 3 times.
-The biggest lesson I learned was to separate the code from the art. Coming from a 3D art background, I naturally tend to approach problems visually. My first reaction was to spawn all the spheres immediately, because that’s what made sense visually. But in programming, especially for optimization tasks, this is unnecessary and not optimized.
+When evaluating a wall, the algorithm performs flood fills on both sides of the wall and compares the resulting room lists. If the lists share common rooms, the areas are already connected, and the wall must not be removed. If the wall separates exactly two unconnected rooms, it can safely be removed.
 
-Instead, I learned that I should first run the logic and math in the background, and only after everything is calculated, instantiate the visuals. No one sees the spheres growing in real time anyway, so why waste computation on scaling them physically?
-This realization made my script simpler, lighter, and faster. And also shorter. I rewrote it so that each sphere became a Sphere class, storing all its necessary parameters like position and radius of the sphere. The growth now happens entirely in data, not in visible geometry, and only after the process is complete are the final spheres instantiated in Blender visible to the user.
+While the logic itself was straightforward, this part of the implementation highlighted opportunities for a cleaner structure. The code worked correctly but was more verbose than necessary, and in hindsight could have been refactored into a more compact and reusable form.
 
-The second major improvement was code reusability. My first solution used a custom white-noise system to scatter the spheres randomly without overlap. It worked, but it was just a bit unnecessary. In my rewritten version, I added a checkCollision() function to handle overlap detection and reused that same function for both position generation and the growth logic.
-This meant less code, more clarity, and better readability.
+## Visualization and Interaction
 
-## Reflection
+Rather than generating the maze instantly, I wanted the creation process to be visible in real time. Using Pygame’s event system, I implemented an animated generation loop that visualizes the maze as it is being built.
 
-Overall, I had a lot of fun working on this assignment.
-Python turned out to be far less intimidating than I expected, especially after getting used to C and C++ at Hive. It actually felt quite approachable.
+To improve usability and experimentation, I also added basic keyboard controls that allow the user to pause and reset the generation, adjust the animation speed, and change the seed value during runtime. Although Pygame’s event handling can feel somewhat cumbersome, it provides enough flexibility to support these interactive features.
 
-I do miss my curly brackets, though.
+## Bonus Features
+
+Implementing a deterministic seed was straightforward using Python’s built-in random module. By initializing the random generator with a fixed seed value, the algorithm always selects cubes in the same order, producing identical maze layouts for the same seed.
+
+The second bonus objective — ensuring that all maze areas are accessible — is effectively guaranteed by the algorithm itself. Since walls are only removed when they connect exactly two previously unconnected rooms, the resulting maze is always fully traversable.
+
+## Code Structure and Lessons Learned
+
+One of the most important lessons from this project was related to code organization. Many Pygame tutorials rely heavily on global variables, and by following that structure early on, I made later refactoring significantly more difficult.
+
+Ideally, the project should have been built around a dedicated class encapsulating the maze state and its behavior. Due to time constraints, I chose to complete the project using the existing structure, fully aware that the code was functional but not as clean or modular as it could be.
+
+Based on this experience, my mentor recommended further reading on clean code practices, an insight I fully agree with and plan to apply in future projects.
+
+## Extending the Project: Pathfinding
+
+After completing the maze generator, the project proved useful beyond its original scope. In a school-organized challenge where teams competed by writing AI for a turn-based strategy game, I volunteered to implement the pathfinding and scouting logic.
+
+I extended this project by adding entrance and exit points to the maze and implemented a breadth-first search algorithm to find the shortest path between them. Since there is only one exit, the algorithm can terminate early as soon as the exit is found, returning the shortest path or null if no path exists.
+
+This implementation served as a practical stepping stone before implementing similar pathfinding logic in Go for the competition project.
+
+## Conclusion
+
+Overall, this project achieved its goals successfully. It resulted in a functional and visually clear maze generator while providing valuable experience in algorithm design, grid-based logic, visualization, and real-time interaction.
+
+While the current codebase would benefit from a full rewrite to improve structure and cleanliness, the project itself stands as a strong portfolio example. It also influenced my approach to future work by reinforcing the importance of planning code structure earlier, especially when following tutorials. I plan to revisit and refine this project in the future, applying the lessons learned to create a cleaner and more maintainable implementation.
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
