@@ -28,7 +28,7 @@ One of the key lessons from this project was related to code organization. Early
 
 The project later proved useful beyond its original meaning. I extended the maze with start and exit points and implemented a breadth-first search pathfinding algorithm to find the shortest path through the maze. I used this brilliant [Red Blob Games website](https://www.redblobgames.com/pathfinding/a-star/introduction.html) as a guide for my implementation. This served as an excellent foundation to learn pathfinding algorithm logic before implementing similar pathfinding in Go language for a separate school competition project as I had never done anything in Go before.
 
-<img src="maze-gif2.gif" width="300" style="display: block; margin: 0 auto;">
+<img src="maze-gif3.gif" width="300" style="display: block; margin: 0 auto;">
 
 ## Results
 
