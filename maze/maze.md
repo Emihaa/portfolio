@@ -8,9 +8,9 @@ This project was created as part of a mentor assignment focused on algorithmic t
 
 After discussing tool choices with my mentor, I decided to implement the project in Python, as it is commonly expected from technical artists and a great second Python addition to my portfolio. For visualization, I chose Pygame instead of Python’s turtle module, as recommended by my mentor, as Pygame’s rendering and event-handling model felt closer to the MLX42 graphics library we had used in earlier school projects at Hive Helsinki.
 
-The maze itself is represented as a 2D grid of cubes classified as borders, walls, or rooms. During generation, wall cubes are randomly selected and evaluated for removal. A wall can only be removed if it separates exactly two previously unconnected rooms. The overall approach is inspired by Kruskal-style maze generation, adapted to a cube-based grid.
-
 <img src="maze0.png" width="300" style="display: block; margin: 0 auto;">
+
+The maze itself is represented as a 2D grid of cubes classified as borders, walls, or rooms. During generation, wall cubes are randomly selected and evaluated for removal. A wall can only be removed if it separates exactly two previously unconnected rooms. The overall approach is inspired by Kruskal-style maze generation, adapted to a cube-based grid.
 
 ## Flood Fill
 
