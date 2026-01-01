@@ -1,10 +1,13 @@
-# Hive Arena – AI Agents for a Turn-Based Strategy Game (Team Project)
+# Hive Arena – AI Agent
 
 ## The challenge
 Hive Arena was a two-week team competition organized by Hive Helsinki, where students designed an algorithmic agent for a turn-based resource-gathering game. The project was implemented in Go, a language none of our team members had previously used. Teams competed by letting their agents play against each other, with no control from us once the game started.
 
 ## The game
 The game mechanics are simple. On their turn the bees could move, gather flowers, attack, build walls or hives, spawn new bees, or do nothing. Flowers acted both as a resource for action and as a win condition. Each bee’s action order was randomized, and visibility was limited to a three tile radius, meaning the map had to be explored under fog-of-war conditions. All bees shared a hive mind so once something was discovered, it was known to all bees.
+
+<img src="miro-hivearena.png" width="300" style="display: block; margin: 0 auto;">
+*Our team miro board for planning strategies and methods*
 
 ## Pathfinding & Scouting
 Our team had three people. We planned strategies and tactics using a shared Miro board and divided responsibilities, with the goal of having a working baseline even within the two week deadline.
