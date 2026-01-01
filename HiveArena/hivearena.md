@@ -6,11 +6,14 @@ Hive Arena was a two-week team competition organized by Hive Helsinki, where stu
 ## The game
 The game mechanics are simple. On their turn the bees could move, gather flowers, attack, build walls or hives, spawn new bees, or do nothing. Flowers acted both as a resource for action and as a win condition. Each bee’s action order was randomized, and visibility was limited to a three tile radius, meaning the map had to be explored under fog-of-war conditions. All bees shared a hive mind so once something was discovered, it was known to all bees.
 
-<img src="miro-hivearena.png" width="500" style="display: block; margin: 0 auto;">
-*Our team miro board for planning strategies and methods*
+<img src="hivearena-00.png" width="500" style="display: block; margin: 0 auto;">
+*Hive Arena game map with different teams as bees*
 
 ## Pathfinding & Scouting
 Our team had three people. We planned strategies and tactics using a shared Miro board and divided responsibilities, with the goal of having a working baseline even within the two week deadline.
+
+<img src="miro-hivearena.png" width="500" style="display: block; margin: 0 auto;">
+*Our team miro board for planning strategies and methods*
 
 My primary responsibility was pathfinding and scouting logic. Because I had recently worked on grid-based maze algorithm in Python, I first tested pathfinding algorithm in my Python maze project and then after having understood the logic, translated it into Go. At first, I programmed a breadth-first search algorithm, but later upgraded it to A* for more efficient and optimized alternative.
 
@@ -18,7 +21,7 @@ Pathfinding worked Great for known targets: moving to flowers, returning to hive
 
 Instead, I tried to add an additional exploration logic layered on top of the grid/map, marking explored versus unknown areas. While the scouting system was not as great or even fully working as intended, it worked well enough to prevent the scout bee from getting stuck trying to access void beyond the map.
 
-<img src="hivearena_gameplay.gif" width="300" style="display: block; margin: 0 auto;">
+<img src="hivearena_gameplay.gif" width="500" style="display: block; margin: 0 auto;">
 *Gameplay testing of our agent in all four different teams*
 
 Additionally, our team assigned roles to the bees, the roles included scout, harvester, and guard. My teammates created a offence strategy, where the guard bees build walls around enemy hive to block the path. This made me happy as a strategy gamer, it brought me joy to see proper strategy planning and offence.
