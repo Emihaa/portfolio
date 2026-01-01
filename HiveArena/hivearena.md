@@ -10,14 +10,14 @@ The game mechanics are simple. On their turn the bees could move, gather flowers
 *Hive Arena game map with different teams as bees*
 
 ## Pathfinding & Scouting
-Our team had three people. We planned strategies and tactics using a shared Miro board and divided responsibilities, with the goal of having a working baseline even within the two week deadline.
+Our team had three people. We planned strategies and tactics using a shared Miro board and divided responsibilities, with the goal of having a working baseline even within the two week deadline. We also used Visual Studio Codes agent and chatGPT to help us understand and write Go code as it was new for us, and we had a strong "vibe code" mentality. [Go language website](https://go.dev/ref/spec) was also usefull with its documentation.
 
 <img src="miro-hivearena.png" width="500" style="display: block; margin: 0 auto;">
 *Our team miro board for planning strategies and methods*
 
-My primary responsibility was pathfinding and scouting logic. Because I had recently worked on grid-based maze algorithm in Python, I first tested pathfinding algorithm in my Python maze project and then after having understood the logic, translated it into Go. At first, I programmed a breadth-first search algorithm, but later upgraded it to A* for more efficient and optimized alternative.
+My primary responsibility was pathfinding and scouting logic. Because I had recently worked on grid-based maze algorithm in Python, I first tested pathfinding algorithm in my Python maze project and then after having understood the logic, translated it into Go. At first, I programmed a breadth-first search algorithm, but later upgraded it to [A*](https://www.redblobgames.com/pathfinding/a-star/introduction.html) for more efficient and optimized alternative.
 
-Pathfinding worked Great for known targets: moving to flowers, returning to hives, and navigating around obstacles. The difficulties came from scouting under limited visibility. At the start of the game, bees may not see any resources(flowers), so exploration become necessary. My team implemented a shared memory grid that stored discovered tiles, but recognizing between unexplored tiles and the void beyond map borders turned out to be a challenge. Since the scouting was the last unfinished part of the agent, and the deadline was the next day, I was too afraid to change the foundation of the explored map, incase of blowing up rest of the code.
+Pathfinding workedg great for known targets: moving to flowers, returning to hives, and navigating around obstacles. The difficulties came from scouting under limited visibility. At the start of the game, bees may not see any resources(flowers), so exploration become necessary. My team implemented a shared memory grid that stored discovered tiles, but recognizing between unexplored tiles and the void beyond map borders turned out to be a challenge. Since the scouting was the last unfinished part of the agent, and the deadline was the next day, I was too afraid to change the foundation of the explored map, incase of blowing up rest of the code.
 
 Instead, I tried to add an additional exploration logic layered on top of the grid/map, marking explored versus unknown areas. While the scouting system was not as great or even fully working as intended, it worked well enough to prevent the scout bee from getting stuck trying to access void beyond the map.
 
