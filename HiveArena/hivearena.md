@@ -32,4 +32,4 @@ Additionally, our team assigned roles to the bees, the roles included scout, har
 
 In the end, our team placed last in the competition. This was largely due to technical issues during the event, Wi-Fi disconnection caused us to time out from multiple matches. We also had unforseen issues in our algorithm, such as not checking whether a target flower was actually reachable and so getting the bee stuck.
 
-Despite the unfortunate result, I enjoyed this learning experience. I leaner about pathfinding algorithms, Go language, Git management in a team, and many others. And overall, I just had fun.
+Despite the unfortunate result, I enjoyed this learning experience. I learned about pathfinding algorithms, Go language, Git management in a team, and much more. And overall, I just had fun.
