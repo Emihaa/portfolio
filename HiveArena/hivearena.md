@@ -9,11 +9,13 @@ The game mechanics are simple. On their turn the bees could move, gather flowers
 <img src="hivearena-00.png" width="500" style="display: block; margin: 0 auto;">
 *Hive Arena game map with different teams as bees*
 
-## Pathfinding & Scouting
+## The team
 Our team had three people. We planned strategies and tactics using a shared Miro board and divided responsibilities, with the goal of having a working baseline even within the two week deadline. We also used Visual Studio Codes agent and chatGPT to help us understand and write Go code as it was new for us, and we had a strong "vibe code" mentality. [Go language website](https://go.dev/ref/spec) was also usefull with its documentation.
 
 <img src="miro-hivearena.png" width="500" style="display: block; margin: 0 auto;">
 *Our team miro board for planning strategies and methods*
+
+## Pathfinding & Scouting
 
 My primary responsibility was pathfinding and scouting logic. Because I had recently worked on grid-based maze algorithm in Python, I first tested pathfinding algorithm in my Python maze project and then after having understood the logic, translated it into Go. At first, I programmed a breadth-first search algorithm, but later upgraded it to [A*](https://www.redblobgames.com/pathfinding/a-star/introduction.html) for more efficient and optimized alternative.
 
