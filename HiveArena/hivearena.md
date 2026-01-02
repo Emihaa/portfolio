@@ -19,7 +19,7 @@ Our team had three people. We planned strategies and tactics using a shared Miro
 
 My primary responsibility was pathfinding and scouting logic. Because I had recently worked on grid-based maze algorithm in Python, I first tested pathfinding algorithm in my Python maze project and then after having understood the logic, translated it into Go. At first, I programmed a breadth-first search algorithm, but later upgraded it to [A*](https://www.redblobgames.com/pathfinding/a-star/introduction.html) for more efficient and optimized alternative.
 
-<img src="Astar.png" width="500" style="display: block; margin: 0 auto;">
+<img src="Astar.png" width="300" style="display: block; margin: 0 auto;">
 A* pathfinding algorithm representation by [Red Blob Games](https://www.redblobgames.com/pathfinding/a-star/introduction.html)
 
 Pathfinding workedg great for known targets: moving to flowers, returning to hives, and navigating around obstacles. The difficulties came from scouting under limited visibility. At the start of the game, bees may not see any resources(flowers), so exploration become necessary. My team implemented a shared memory grid that stored discovered tiles, but recognizing between unexplored tiles and the void beyond map borders turned out to be a challenge. Since the scouting was the last unfinished part of the agent, and the deadline was the next day, I was too afraid to change the foundation of the explored map, incase of blowing up rest of the code.
