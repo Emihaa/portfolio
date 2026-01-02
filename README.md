@@ -12,6 +12,7 @@ Experienced 3D artist with more than 7 years of experience from the mobile game 
 - [Linkedin](https://www.linkedin.com/in/emilia-haanp%C3%A4%C3%A4-25a88070)
 - [ArtStation](https://www.artstation.com/emihaa)
 - [Github](https://github.com/Emihaa)
+- [Shadertoy](https://www.shadertoy.com/user/OliverEmi)
 - <a href="CV-2025.pdf">CV</a>
 
 
